@@ -59,6 +59,7 @@ Use this method if you wish to access VueTyper globally via `window.Vue3Typer`.
 ```html
 
 <script src="https://unpkg.com/vue3-typer/dist/vue3-typer.umd.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue3-typer/dist/vue-typer.css">
 ```
 
 ## Usage
@@ -73,6 +74,7 @@ locally. [What's the difference? See the Vue documentation here.](https://vuejs.
 ```ts
   // ES6
 import {VueTyper} from 'vue-typer'
+import "vue3-typer/dist/vue-typer.css"
 // Global
 const VueTyper = window.Vue3Typer.VueTyper
 ```
@@ -102,6 +104,7 @@ export default defineComponent({
 ```ts
   // ES6
 import VueTyper from 'vue-typer'
+import "vue3-typer/dist/vue-typer.css"
 // Global
 const VueTyper = window.VueTyper.default
 ```
