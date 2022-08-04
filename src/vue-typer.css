@@ -1,0 +1,131 @@
+.vue-typer {
+    --char-typed-color: black;
+    --char-selected-color: black;
+
+    --char-typed-background-color: transparent;
+    --char-selected-background-color: #ACCEF7;
+
+    --caret-idle-color: black;
+    --caret-typing-color: black;
+    --caret-selecting-color: black;
+    --caret-erasing-color: black;
+    --caret-complete-color: black;
+
+    cursor: default;
+    user-select: none;
+}
+
+.vue-typer .caret {
+    display: inline-block;
+    width: 1px;
+}
+
+.vue-typer .caret:empty::before {
+    /* zero width space character */
+    content: '\200b';
+}
+
+.vue-typer .caret.idle {
+    background-color: var(--caret-idle-color);
+}
+
+.vue-typer .caret.typing {
+    background-color: var(--caret-typing-color);
+}
+
+.vue-typer .caret.selecting {
+    display: none;
+    background-color: var(--caret-selecting-color);
+}
+
+.vue-typer .caret.erasing {
+    background-color: var(--caret-erasing-color);
+}
+
+.vue-typer .caret.complete {
+    display: none;
+    background-color: var(--caret-complete-color);
+}
+
+.vue-typer .char {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+
+/* TODO: This can be removed in favor of the ':blank' pseudo-class:
+         https://drafts.csswg.org/selectors-4/#the-blank-pseudo */
+.vue-typer .char.newline {
+    display: inline;
+}
+
+/* Keep the following .char styles as low-specificity as possible so they are more easily overridden */
+.vue-typer .char.typed {
+    color: var(--char-typed-color);
+    background-color: var(--char-typed-background-color);
+}
+
+.vue-typer .char.selected {
+    color: var(--char-selected-color);
+    background-color: var(--char-selected-background-color);
+}
+
+.vue-typer .char.erased {
+    display: none;
+}
+
+.vue-typer span.left,
+.vue-typer span.right {
+    display: inline;
+}
+
+@keyframes vue-typer-caret-blink {
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes vue-typer-caret-smooth {
+    0%, 20% {
+        opacity: 1;
+    }
+    60%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes vue-typer-caret-phase {
+    0%, 20% {
+        opacity: 1;
+    }
+    90%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes vue-typer-caret-expand {
+    0%, 20% {
+        transform: scaleY(1);
+    }
+    80%, 100% {
+        transform: scaleY(0);
+    }
+}
+
+.vue-typer .caret.blink {
+    animation: vue-typer-caret-blink 1s step-start 0s infinite;
+}
+
+.vue-typer .caret.smooth {
+    animation: vue-typer-caret-smooth 0.5s ease-in-out 0s infinite alternate;
+}
+
+.vue-typer .caret.phase {
+    animation: vue-typer-caret-phase 0.5s ease-in-out 0s infinite alternate;
+}
+
+.vue-typer .caret.expand {
+    animation: vue-typer-caret-expand 0.5s ease-in-out 0s infinite alternate;
+}

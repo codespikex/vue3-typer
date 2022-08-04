@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es6",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "paths": {
+      "~/*": [
+        "src/*"
+      ],
+      "play/*": [
+        "play/*"
+      ]
+    },
+    "types": [
+      "vite/client",
+      "@types/node",
+      "vitest/globals"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*",
+    "play/**/*"
+  ]
+}
