@@ -16,11 +16,6 @@
     },
     "./dist/vue-typer.css": "./dist/vue-typer.css"
   },
-  "files": [
-    "./dist/vue3-typer.es.js",
-    "./dist/vue3-typer.umd.js",
-    "./dist/vue-typer.css"
-  ],
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
